@@ -9,13 +9,18 @@ var rateInput = $('#rate');
 var dueDateInput = $('#duedate');
 var addButton = $('.add-btn');
 var projectForm = $('.project-form')
-var submit = $('#submitbtn')
+var submitButton = $('#submitbtn')
+var deleteButton = $('.deletebtn');
 
 function currentTime() {
     var now = moment().format('MMMM Do YYYY, h:mm:ss a');
     headerTime.text(now);
     console.log(now);
 }
+
+//call current time function with 1 sec interval, update dom every second
+setInterval(currentTime, 1000)
+
 // function to display the project info in the table
 function displayProject(name, type, rate, duedate) {
     var projectRow = $('<tr>');
@@ -30,10 +35,10 @@ function displayProject(name, type, rate, duedate) {
     var earnings = calcTotal(rate, daysLeft);
 
     var totalEarnings = $('<td>').text('$' + earnings);
-    var deleteBtn = $('<td>').text('X');
+    var deleteProjectBtn = $('<td>').text('X').addClass('deletebtn text-center');
 
     //append all new table elements to the new table row
-    projectRow.append(projectName, projectType, projectRate, projectDueDate, daysLeftElement, totalEarnings, deleteBtn);
+    projectRow.append(projectName, projectType, projectRate, projectDueDate, daysLeftElement, totalEarnings, deleteProjectBtn);
 
     //append table row to the table
     projectList.append(projectRow);
@@ -69,6 +74,14 @@ function formSubmit(event) {
 }
 
 //event handlers
-submit.on('click', formSubmit);
+
+//handle submitting form
+submitButton.on('click', formSubmit);
+
+//handle deleting rows from table (had to look up how to use multiple arguments)
+
+projectList.on('click', '.deletebtn', deleteProject);
+
+
 
 
