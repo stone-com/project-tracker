@@ -39,7 +39,7 @@
             </ul>
           </div>
           <div class="card-footer">
-            <button class="btn-primary add-btn">Add Project</button>
+            <button class="btn-primary add-btn"data-toggle='modal' data-target='.form-modal'>Add Project</button>
           </div>
         </div>
       </section>
@@ -62,51 +62,60 @@
           </table>
         </div>
       </section>
-      <div class="form-modal">
-        <div class="modal-header">
-          <h3 class="modal-title">Add a New Project</h3>
+    </div>
+        <!-- modal -->
+      
+    <div class="form-modal modal modal-dialog" role="dialog" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Add a New Project</h3>
+            <button class='close' data-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form action="" class="project-form">   
+                <div class="form-group">
+                  <label for="name">Project Name</label>
+                  <input type="select" name="name" id="name" placeholder="Enter the Project's Name" required class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="type">Project Type</label>
+                  <select class="form-control" name="type" id="type" placeholder="Enter the Project's" required>
+                    <option value="frontend">Front End</option>
+                    <option value="backend">Back End</option>
+                    <option value="fullstack">Full Stack</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="print">Print Campaign</option>
+                    <option value="marketing">Digital Marketing</option>
+                </select>
+                </div>
+                <div class="form-group">
+                  <label for="rate">Hourly Rate</label>
+                  <input class="form-control" type="number" name="rate" id="rate" placeholder="$" required>
+                </div>
+                <div class="form-group">
+                  <label for="duedate">Project Name</label>
+                  <input class="form-control" type="date" name="duedate" id="duedate" placeholder="Enter the Project's Name" required>
+                </div>
+              </form>
+            <div class="modal-footer">
+              <button type='button' data-dismiss='modal' class="btn">Close</button>
+              <button class="btn" type="submit" id="submitbtn">Submit Project Info</button>
+            </div>
+          </div>
         </div>
-        <form action="" class="project-form">
-          <div>
-            <label for="name">Project Name</label>
-            <input type="select" name="name" id="name" placeholder="Enter the Project's Name" required>
-          </div>
-          <div>
-            <label for="type">Project Type</label>
-            <select name="type" id="type" placeholder="Enter the Project's" required>
-              <option value="frontend">Front End</option>
-              <option value="backend">Back End</option>
-              <option value="fullstack">Full Stack</option>
-              <option value="mobile">Mobile</option>
-              <option value="print">Print Campaign</option>
-              <option value="marketing">Digital Marketing</option>
-          </select>
-          </div>
-          <div>
-            <label for="rate">Hourly Rate</label>
-            <input type="number" name="rate" id="rate" placeholder="$" required>
-          </div>
-          <div>
-            <label for="duedate">Project Name</label>
-            <input type="date" name="duedate" id="duedate" placeholder="Enter the Project's Name" required>
-          </div>
-        </form>
-        <div class="modal-footer">
-          <button>Close</button>
-          <button>Submit Project Info</button>
-        </div>
+        
       </div>
     </div>
   </main>
 
 
 
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.13.0-rc.3/jquery-ui.js" integrity="sha256-tYLuvehjddL4JcVWw1wRMB0oPSz7fKEpdZrIWf3rWNA=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
